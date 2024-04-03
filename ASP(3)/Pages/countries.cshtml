@@ -1,0 +1,19 @@
+﻿@page
+@model ASP_3_.Pages.countriesModel
+@{
+    Dictionary<string, string> cinfo = new Dictionary<string, string>();
+    cinfo.Add("C1", "Info1");
+    cinfo.Add("C2", "Info2");
+    cinfo.Add("C3", "Info3");
+    cinfo.Add("C4", "Info4");
+    cinfo.Add("C5", "Info5");
+}
+<ul>
+    @foreach (var i in cinfo)
+    {
+        <li>
+            <div>Country: @i.Key</div>
+            <div>Info: @i.Value</div>
+        </li>
+    }
+</ul>

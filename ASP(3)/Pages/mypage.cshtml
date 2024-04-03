@@ -1,0 +1,28 @@
+﻿@page
+@model ASP_3_.Pages.mypageModel
+@{
+    StreamReader reader = new StreamReader("appsettings.json");
+    string data = reader.ReadToEnd();
+    reader.Close();
+
+    List<string> texts = new List<string>() { "text1", "text2", "text3", "text4", "text5" };
+    Random r = new Random();
+
+    List<string> rests = new List<string>() { "rest1", "rest2", "rest3", "rest4", "rest5"};
+}
+<div>LB</div>
+<div>2: Hello, world!</div>
+<div>3: @DateTime.Now.ToString()</div>
+<div>4: @data</div>
+<div>5: @texts[r.Next(0, texts.Count)]</div>
+<br />
+<div>DZ</div>
+<div>1: @DateTime.Now.Day day</div>
+<div>2, 3, 4: @Convert.ToChar(r.Next(65, 91))
+    <ul>
+        @for (int i = 0; i < rests.Count; i++)
+        {
+            <li>@(i + 1): @rests[i]</li>
+        }
+    </ul>
+</div>
